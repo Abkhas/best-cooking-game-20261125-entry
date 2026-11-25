@@ -39,6 +39,20 @@ woks going, and a plated dish on its way to the serve window. They
 were taken headless from the game's own `?shot=` states — see
 `game/src/shots.js`.
 
+## Design notes
+
+Two decisions shape how the game plays. First, the prep island sits
+between the crates and the woks on purpose: every dish forces a route
+— crates, board, wok, plate, serve window — so an order is a planning
+problem (which ticket first, which wok is free, what can be carried
+together), not a fetch quest. A straight line from crate to wok would
+have made the kitchen a corridor. Second, patience pays a bonus
+instead of a flat price: a dish served with patience left earns up to
+40% more, and the combo adds 10 coins a serve. Serving fast matters
+more than serving at all, which is what makes the combo meaningful —
+it rewards a cook who reads the board and chains serves, not one who
+clears tickets in any order.
+
 ## Verify the hand-in
 
 ```sh
